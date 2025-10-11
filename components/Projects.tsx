@@ -18,48 +18,54 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "API REST E-commerce",
+    title: "Autenticación Moderna",
     description:
-      "Sistema completo de e-commerce con autenticación JWT, gestión de productos, carrito de compras y procesamiento de pagos.",
-    technologies: ["Node.js", "Express", "PostgreSQL", "JWT", "Stripe API"],
+      "Sistema de autenticación avanzado que integra métodos como JWT, OAuth2, Two-Factor Authentication y Magic Link. Desarrollado con NestJS y PostgreSQL siguiendo principios SOLID.",
+    technologies: ["NestJS", "PostgreSQL", "TypeScript", "JWT", "OAuth2"],
     achievement:
-      "Redujo el tiempo de respuesta en un 40% mediante optimización de consultas SQL y implementación de caché Redis.",
+      "Demuestra la implementación de estrategias modernas de seguridad y autenticación utilizadas en entornos empresariales.",
     videoUrl: "/placeholder.svg?height=300&width=400",
-    githubUrl: "https://github.com/jhoaking/ecommerce-api",
+    githubUrl: "https://github.com/jhoaking/Sistema-de-autenticaci-n-moderna",
     gridClass: "md:col-span-2 md:row-span-2",
   },
   {
     id: 2,
-    title: "Sistema de Gestión de Tareas",
+    title: "Plataforma de Seguimiento y Automatización de Servicios",
     description:
-      "API para gestión de proyectos y tareas con roles de usuario, notificaciones en tiempo real y reportes.",
-    technologies: ["Node.js", "Express", "MySQL", "Socket.io", "Jest"],
-    achievement: "Implementó sistema de notificaciones en tiempo real que mejoró la colaboración del equipo en un 60%.",
+      "Backend orientado a la automatización de flujos mediante integración con n8n. Gestiona usuarios, tareas y notificaciones en tiempo real con autenticación centralizada.",
+    technologies: ["Node.js", "Express", "MySQL", "Socket.io", "n8n"],
+    achievement:
+      "Conectó la API con flujos automáticos que ejecutan tareas del backend de forma autónoma, reduciendo intervención manual y errores operativos.",
     videoUrl: "/placeholder.svg?height=200&width=300",
-    githubUrl: "https://github.com/jhoaking/task-manager",
+    githubUrl: "https://github.com/jhoaking/seguimiento-Servicios",
     gridClass: "md:col-span-1",
   },
   {
     id: 3,
-    title: "Microservicio de Autenticación",
-    description: "Servicio independiente para autenticación y autorización con OAuth2, 2FA y gestión de sesiones.",
-    technologies: ["Node.js", "Express", "PostgreSQL", "OAuth2", "Redis"],
-    achievement: "Centralizó la autenticación para 5 aplicaciones diferentes, reduciendo código duplicado en un 70%.",
+    title: "Pulse-hub",
+    description:
+      "Aplicación backend en tiempo real basada en WebSockets, diseñada para equipos de trabajo. Incluye chat, tareas compartidas y control de roles con autenticación.",
+    technologies: ["NestJS", "PostgreSQL", "WebSockets", "JWT"],
+    achievement:
+      "Proporciona colaboración instantánea y monitoreo de datos en vivo con arquitectura modular escalable.",
     videoUrl: "/placeholder.svg?height=200&width=300",
-    githubUrl: "https://github.com/jhoaking/auth-microservice",
+    githubUrl: "https://github.com/jhoaking/Pulse-hub",
     gridClass: "md:col-span-1",
   },
   {
     id: 4,
-    title: "API de Análisis de Datos",
-    description: "Sistema para procesamiento y análisis de grandes volúmenes de datos con endpoints optimizados.",
-    technologies: ["Node.js", "Express", "PostgreSQL", "TypeScript", "Bull Queue"],
-    achievement: "Procesó más de 1 millón de registros diarios con un tiempo de respuesta promedio de 200ms.",
+    title: "WorkShowApp",
+    description:
+      "Proyecto colaborativo junto a un desarrollador full-stack. Participé en la implementación de la lógica backend para la gestión de usuarios, proyectos y tareas.",
+    technologies: ["Node.js", "Express", "PostgreSQL", "TypeScript"],
+    achievement:
+      "Estructuró endpoints y controladores para mejorar la escalabilidad y mantenibilidad del sistema.",
     videoUrl: "/placeholder.svg?height=200&width=300",
-    githubUrl: "https://github.com/jhoaking/data-analytics-api",
+    githubUrl: "https://github.com/BernardoPer19/WorkShowApp",
     gridClass: "md:col-span-2",
   },
 ]
+
 
 export default function Projects() {
   const [isVisible, setIsVisible] = useState(false)
