@@ -4,6 +4,7 @@ import Projects from "@/components/Projects"
 import Technologies from "@/components/Technologies"
 import Contact from "@/components/Contact"
 import Navigation from "@/components/Navigation"
+import Experience from '@/components/Experience'
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Navigation />
       <Hero />
       <About />
+      <Experience/>
       <Projects />
       <Technologies />
       <Contact />

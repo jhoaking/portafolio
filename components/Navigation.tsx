@@ -37,12 +37,13 @@ export default function Navigation() {
   }
 
   const navItems = [
-    { id: "inicio", label: "Inicio" },
-    { id: "sobre-mi", label: "Sobre mí" },
-    { id: "proyectos", label: "Proyectos" },
-    { id: "tecnologias", label: "Tecnologías" },
-    { id: "contacto", label: "Contacto" },
-  ]
+  { id: "inicio", label: "Inicio" },
+  { id: "sobre-mi", label: "Sobre mí" },
+  { id: "experiencia", label: "Experiencia" }, 
+  { id: "proyectos", label: "Proyectos" },
+  { id: "tecnologias", label: "Tecnologías" },
+  { id: "contacto", label: "Contacto" },
+]
 
   return (
     <nav className="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md border-b border-green-800/30 z-50">
