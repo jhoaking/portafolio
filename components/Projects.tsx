@@ -12,7 +12,6 @@ interface Project {
   videoUrl: string
   githubUrl?: string
   liveUrl?: string
-  gridClass: string
 }
 
 const projects: Project[] = [
@@ -26,7 +25,6 @@ const projects: Project[] = [
       "Demuestra la implementación de estrategias modernas de seguridad y autenticación utilizadas en entornos empresariales.",
     videoUrl: "/placeholder.svg?height=300&width=400",
     githubUrl: "https://github.com/jhoaking/Sistema-de-autenticaci-n-moderna",
-    gridClass: "md:col-span-2 md:row-span-2",
   },
   {
     id: 2,
@@ -38,7 +36,6 @@ const projects: Project[] = [
       "Conectó la API con flujos automáticos que ejecutan tareas del backend de forma autónoma, reduciendo intervención manual y errores operativos.",
     videoUrl: "/placeholder.svg?height=200&width=300",
     githubUrl: "https://github.com/jhoaking/seguimiento-Servicios",
-    gridClass: "md:col-span-1",
   },
   {
     id: 3,
@@ -50,7 +47,6 @@ const projects: Project[] = [
       "Proporciona colaboración instantánea y monitoreo de datos en vivo con arquitectura modular escalable.",
     videoUrl: "/placeholder.svg?height=200&width=300",
     githubUrl: "https://github.com/jhoaking/Pulse-hub",
-    gridClass: "md:col-span-1",
   },
   {
     id: 4,
@@ -62,10 +58,8 @@ const projects: Project[] = [
       "Estructuró endpoints y controladores para mejorar la escalabilidad y mantenibilidad del sistema.",
     videoUrl: "/placeholder.svg?height=200&width=300",
     githubUrl: "https://github.com/BernardoPer19/WorkShowApp",
-    gridClass: "md:col-span-2",
   },
 ]
-
 
 export default function Projects() {
   const [isVisible, setIsVisible] = useState(false)
@@ -114,18 +108,19 @@ export default function Projects() {
             </p>
           </div>
 
-          {/* Bento Grid */}
-          <div className="grid md:grid-cols-3 gap-6 auto-rows-fr">
+          {/* Grid uniforme - Todas las cards del mismo tamaño */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
             {projects.map((project, index) => (
               <div
                 key={project.id}
-                className={`${project.gridClass} bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl border border-green-800/30 backdrop-blur-sm hover:border-green-600/50 hover:shadow-xl hover:shadow-green-900/20 transition-all duration-500 overflow-hidden group cursor-pointer hover:scale-[1.02] ${
+                className={`bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl border border-green-800/30 backdrop-blur-sm hover:border-green-600/50 hover:shadow-xl hover:shadow-green-900/20 transition-all duration-500 overflow-hidden group cursor-pointer hover:scale-[1.02] flex flex-col ${
                   cardsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
                 onClick={() => setSelectedProject(project)}
               >
-                <div className="relative h-48 bg-gradient-to-br from-green-900/20 to-gray-800/50 flex items-center justify-center overflow-hidden">
+                {/* Imagen con altura fija */}
+                <div className="relative h-48 bg-gradient-to-br from-green-900/20 to-gray-800/50 flex items-center justify-center overflow-hidden flex-shrink-0">
                   <img
                     src={project.videoUrl || "/placeholder.svg"}
                     alt={project.title}
@@ -136,14 +131,15 @@ export default function Projects() {
                   </div>
                 </div>
 
-                <div className="p-6">
+                {/* Contenido con altura flexible */}
+                <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-gray-400 mb-4 line-clamp-3">{project.description}</p>
+                  <p className="text-gray-400 mb-4 line-clamp-3 flex-grow">{project.description}</p>
 
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.slice(0, 3).map((tech) => (
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {project.technologies.slice(0, 4).map((tech) => (
                       <span
                         key={tech}
                         className="px-3 py-1 bg-green-900/30 text-green-400 text-sm rounded-full border border-green-800/50"
@@ -151,9 +147,9 @@ export default function Projects() {
                         {tech}
                       </span>
                     ))}
-                    {project.technologies.length > 3 && (
+                    {project.technologies.length > 4 && (
                       <span className="px-3 py-1 bg-gray-800/50 text-gray-400 text-sm rounded-full border border-gray-700/50">
-                        +{project.technologies.length - 3}
+                        +{project.technologies.length - 4}
                       </span>
                     )}
                   </div>
