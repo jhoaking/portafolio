@@ -48,34 +48,34 @@ const experiences: ExperienceItem[] = [
     ],
     technologies: ["Node.js", "Express", "NestJS", "PostgreSQL", "MySQL"]
   },
-  {
-    id: 3,
-    title: "Estudiante de Ingeniería Informática",
-    company: "Universidad",
-    location: "Bolivia",
-    period: "2021 - Presente",
-    type: "education",
-    description: "Formación académica en desarrollo de software, estructuras de datos y algoritmos.",
-    achievements: [
-      "Proyectos prácticos en desarrollo backend y arquitectura de software",
-      "Estudio de patrones de diseño y principios SOLID",
-      "Aprendizaje continuo de nuevas tecnologías y frameworks"
-    ]
-  },
-  {
-    id: 4,
-    title: "Técnico Medio en Sistemas Informáticos",
-    company: "Instituto Técnico",
-    location: "Bolivia",
-    period: "Completado",
-    type: "education",
-    description: "Base sólida en fundamentos de programación y sistemas informáticos.",
-    achievements: [
-      "Fundamentos de programación y lógica computacional",
-      "Administración de bases de datos relacionales",
-      "Gestión de redes y mantenimiento de sistemas"
-    ]
-  }
+  //{
+  //  id: 3,
+  //  title: "Estudiante de Ingeniería Informática",
+  //  company: "Universidad",
+  //  location: "Bolivia",
+  //  period: "2021 - Presente",
+  //  type: "education",
+  //  description: "Formación académica en desarrollo de software, estructuras de datos y algoritmos.",
+  //  achievements: [
+  //    "Proyectos prácticos en desarrollo backend y arquitectura de software",
+  //    "Estudio de patrones de diseño y principios SOLID",
+  //    "Aprendizaje continuo de nuevas tecnologías y frameworks"
+  //  ]
+  //},
+  //{
+  //  id: 4,
+  //  title: "Técnico Medio en Sistemas Informáticos",
+  //  company: "Instituto Técnico",
+  //  location: "Bolivia",
+  //  period: "Completado",
+  //  type: "education",
+  //  description: "Base sólida en fundamentos de programación y sistemas informáticos.",
+  //  achievements: [
+  //    "Fundamentos de programación y lógica computacional",
+  //    "Administración de bases de datos relacionales",
+  //    "Gestión de redes y mantenimiento de sistemas"
+  //  ]
+  //}
 ]
 
 export default function Experience() {
