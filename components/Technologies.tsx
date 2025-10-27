@@ -1,20 +1,37 @@
 "use client"
 
 import { useEffect, useState } from "react"
+// Importamos íconos reales de cada tech
+import {
+  SiNodedotjs,
+  SiExpress,
+  SiPostgresql,
+  SiMysql,
+  SiTypescript,
+  SiJsonwebtokens,
+  SiJest,
+  SiNestjs,
+  SiDocker,
+  SiGit,
+  SiSocketdotio,
+  SiFastapi,
+  SiInsomnia,
+} from "react-icons/si"
+import { FaCloud } from "react-icons/fa"
 
 const technologies = [
-  { name: "Node.js", icon: "🟢" },
-  { name: "Express", icon: "⚡" },
-  { name: "PostgreSQL", icon: "🐘" },
-  { name: "MySQL", icon: "🗄️" },
-  { name: "TypeScript", icon: "🔷" },
-  { name: "JWT", icon: "🔐" },
-  { name: "Jest", icon: "🧪" },
-  { name: "Redis", icon: "🔴" },
-  { name: "Docker", icon: "🐳" },
-  { name: "Git", icon: "📝" },
-  { name: "REST APIs", icon: "🌐" },
-  { name: "Socket.io", icon: "⚡" },
+  { name: "Node.js", icon: <SiNodedotjs className="text-green-500" /> },
+  { name: "Express", icon: <SiExpress className="text-gray-300" /> },
+  { name: "PostgreSQL", icon: <SiPostgresql className="text-sky-500" /> },
+  { name: "MySQL", icon: <SiMysql className="text-blue-400" /> },
+  { name: "TypeScript", icon: <SiTypescript className="text-blue-500" /> },
+  { name: "JWT", icon: <SiJsonwebtokens className="text-yellow-400" /> },
+  { name: "Jest", icon: <SiJest className="text-red-500" /> },
+  { name: "NestJS", icon: <SiNestjs className="text-pink-500" /> },
+  { name: "Docker", icon: <SiDocker className="text-sky-400" /> },
+  { name: "Git", icon: <SiGit className="text-orange-500" /> },
+  { name: "REST APIs", icon: <FaCloud className="text-green-400" /> },
+  { name: "Sockets", icon: <SiSocketdotio className="text-gray-200" /> },
 ]
 
 export default function Technologies() {
@@ -33,16 +50,16 @@ export default function Technologies() {
     )
 
     const element = document.getElementById("tecnologias")
-    if (element) {
-      observer.observe(element)
-    }
-
+    if (element) observer.observe(element)
     return () => observer.disconnect()
   }, [])
 
   return (
-    <section id="tecnologias" className="py-20 bg-gradient-to-br from-slate-900 to-gray-900 relative overflow-hidden">
-      {/* Background Effects */}
+    <section
+      id="tecnologias"
+      className="py-20 bg-gradient-to-br from-slate-900 to-gray-900 relative overflow-hidden"
+    >
+      {/* Fondo */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(34,197,94,0.05),transparent_50%)]"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -60,7 +77,7 @@ export default function Technologies() {
             </p>
           </div>
 
-          {/* Infinite Slider */}
+          {/* Slider infinito */}
           <div className="relative mb-16">
             <div className="flex overflow-hidden">
               <div className="flex animate-scroll">
@@ -69,8 +86,8 @@ export default function Technologies() {
                     key={`${tech.name}-${index}`}
                     className="flex-shrink-0 mx-4 bg-gradient-to-br from-gray-800/50 to-green-900/20 rounded-2xl p-6 border border-green-800/30 backdrop-blur-sm hover:border-green-600/50 hover:shadow-lg hover:shadow-green-900/20 transition-all duration-300 min-w-[200px] hover:scale-105"
                   >
-                    <div className="text-center">
-                      <div className="text-4xl mb-3">{tech.icon}</div>
+                    <div className="text-center flex flex-col items-center">
+                      <div className="text-5xl mb-3">{tech.icon}</div>
                       <h3 className="text-lg font-semibold text-white">{tech.name}</h3>
                     </div>
                   </div>
@@ -78,17 +95,18 @@ export default function Technologies() {
               </div>
             </div>
 
-            {/* Gradient overlays */}
+            {/* Gradientes laterales */}
             <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-slate-900 to-transparent pointer-events-none"></div>
             <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-900 to-transparent pointer-events-none"></div>
           </div>
 
-          {/* Skills Grid */}
+          {/* Sección de habilidades */}
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 title: "Backend Development",
-                description: "Especializado en crear APIs REST robustas, seguras y escalables con Node.js y Express",
+                description:
+                  "Especializado en crear APIs REST robustas, seguras y escalables con Node.js y Express",
               },
               {
                 title: "Base de Datos",
